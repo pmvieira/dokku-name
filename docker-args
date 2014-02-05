@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+
+STDIN=$(cat)
+APP="$1"
+DNS_FILE="DNS"
+DNS_FILE_PATH="$DOKKU_ROOT/$APP/$DNS_FILE"
+
+if [[ -f "$DNS_FILE_PATH" ]]; then
+  while read line
+  do
+    output="$output -dns $line"
+  done < $DNS_FILE_PATH
+
+  echo "$STDIN$output"
+fi

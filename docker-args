@@ -3,14 +3,15 @@ set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 
 STDIN=$(cat)
 APP="$1"
-DNS_FILE="DNS"
-DNS_FILE_PATH="$DOKKU_ROOT/$APP/$DNS_FILE"
+NAME_FILE="NAME"
+NAME_FILE_PATH="$DOKKU_ROOT/$APP/$NAME_FILE"
 
-if [[ -f "$DNS_FILE_PATH" ]]; then
+output=""
+if [[ -f "$NAME_FILE_PATH" ]]; then
   while read line
   do
-    output="$output -dns $line"
-  done < $DNS_FILE_PATH
-
-  echo "$STDIN$output"
+    output="$output -name $line"
+  done < $NAME_FILE_PATH
 fi
+output="$output -name $APP"
+echo "$STDIN$output"

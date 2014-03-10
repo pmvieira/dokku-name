@@ -1,7 +1,7 @@
-dokku-dns
+dokku-name
 =========
 
-Custom DNS setup for dokku (https://github.com/progrium/dokku).
+Custom Docker container name setup for dokku (https://github.com/progrium/dokku).
 
 Requirements
 ------------
@@ -13,34 +13,33 @@ Installation
 
 ```bash
 $ cd /var/lib/dokku/plugins
-$ sudo git clone https://github.com/Frusty/dokku-dns.git dns
+$ https://github.com/alex-sherwin/dokku-name.git
 ````
 
 Usage
 -----
 
-In your applications folder (/home/dokku/app_name) create a file called DNS.
+In your applications folder (/home/dokku/app_name) create a file called NAME.
 
-Inside this file list one DNS IP*. For example:
+Inside this file list one name per line:
 
 ```bash
-8.8.8.8
-8.8.4.4
+name1
+name2
 ```
 
 The above example will result in the following arguments being passed to docker during deploy and docker run:
 
 ```bash
--dns 8.8.8.8 -dns 8.8.4.4
+-name name1 -name name2
 ```
 
 Thanks
 ------
 
-This plugin is heavily based on the persistent-storage-plugin.
-https://github.com/dyson/dokku-persistent-storage
+Originally based on https://github.com/Frusty/dokku-name.git (no longer available at the time of this writing)
 
 License
 -------
 
-MIT.
+MIT

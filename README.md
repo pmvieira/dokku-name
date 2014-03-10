@@ -13,7 +13,7 @@ Installation
 
 ```bash
 $ cd /var/lib/dokku/plugins
-$ https://github.com/alex-sherwin/dokku-name.git
+$ git clone https://github.com/alex-sherwin/dokku-name.git
 ````
 
 Usage

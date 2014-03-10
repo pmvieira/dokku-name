@@ -39,7 +39,7 @@ Thanks
 
 Originally based on https://github.com/Frusty/dokku-name.git (no longer available at the time of this writing)
 
-License
+MIT License
 -------
 
 Copyright (C) 2014 Alex Sherwin

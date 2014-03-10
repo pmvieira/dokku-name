@@ -22,17 +22,16 @@ Usage
 
 In your applications folder (/home/dokku/app_name) create a file called NAME.
 
-Inside this file list one name per line:
+Inside this file list exactly one name
 
 ```bash
-name1
-name2
+myname
 ```
 
 The above example will result in the following arguments being passed to docker during deploy and docker run:
 
 ```bash
--name name1 -name name2
+-name myname
 ```
 
 Thanks

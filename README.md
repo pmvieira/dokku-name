@@ -12,8 +12,9 @@ Installation
 ------------
 
 ```bash
-$ cd /var/lib/dokku/plugins
-$ git clone https://github.com/alex-sherwin/dokku-name.git
+cd /var/lib/dokku/plugins
+git clone https://github.com/alex-sherwin/dokku-name.git
+dokku plugins-install
 ````
 
 Usage

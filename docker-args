@@ -8,10 +8,14 @@ NAME_FILE_PATH="$DOKKU_ROOT/$APP/$NAME_FILE"
 
 output=""
 if [[ -f "$NAME_FILE_PATH" ]]; then
-  while read line
-  do
-    output="$output -name $line"
-  done < $NAME_FILE_PATH
+  COUNT=`cat $NAME_FILE_PATH | wc -w`
+  if [[ "$COUNT" -ne "1" ]]; then
+    echo "######> NAME file does not contain exactly one word" >&2
+  else
+    while read line
+    do
+      output="$output -name $line"
+    done < $NAME_FILE_PATH
+  fi
 fi
-output="$output -name $APP"
 echo "$STDIN$output"

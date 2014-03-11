@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# dokku-name [development]
+# dokku-name 1.0.0
 
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 

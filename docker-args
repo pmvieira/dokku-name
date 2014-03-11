@@ -8,6 +8,10 @@ NAME_FILE_PATH="$DOKKU_ROOT/$APP/$NAME_FILE"
 
 output=""
 if [[ -f "$NAME_FILE_PATH" ]]; then
+  # issue a cleanup, removes old named docker containers
+  dokku cleanup
+  # need to wait, docker doesn't appear to do this immediately
+  sleep 2
   COUNT=`cat $NAME_FILE_PATH | wc -w`
   if [[ "$COUNT" -ne "1" ]]; then
     echo "######> NAME file does not contain exactly one word" >&2

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# dokku-name [development]
+
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 
 STDIN=$(cat)

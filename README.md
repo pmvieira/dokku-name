@@ -14,8 +14,8 @@ Installation
 
 ```bash
 cd /var/lib/dokku/plugins
-git clone https://github.com/alex-sherwin/dokku-name.git
-dokku plugins-install
+sudo git clone https://github.com/alex-sherwin/dokku-name.git
+sudo dokku plugins-install
 ````
 
 Usage
@@ -32,7 +32,7 @@ myname
 The above example will result in the following arguments being passed to docker during deploy and docker run:
 
 ```bash
--name myname
+--name="myname"
 ```
 
 Thanks

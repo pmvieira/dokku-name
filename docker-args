@@ -14,7 +14,7 @@ if [[ -f "$NAME_FILE_PATH" ]]; then
   else
     while read line
     do
-      output="$output -name $line"
+      output="$output --name=$line"
     done < $NAME_FILE_PATH
   fi
 fi

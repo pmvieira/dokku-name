@@ -1,12 +1,13 @@
 dokku-name
 =========
-
 Custom Docker container name setup for dokku (https://github.com/progrium/dokku).
 
 Requirements
 ------------
 
 Development version of dokku at or after https://github.com/progrium/dokku/commit/c77cbf1d3ae07f0eafb85082ed7edcae9e836147.
+
+Tested on Docker 0.9
 
 Installation
 ------------

@@ -8,6 +8,14 @@ APP="$1"
 NAME_FILE="NAME"
 NAME_FILE_PATH="$DOKKU_ROOT/$APP/$NAME_FILE"
 
+function rename() {
+  curr=$(sudo docker ps | grep $1 | awk '{print $12}')
+  echo "curr is ${curr}"
+  if [ -n $curr ]; then
+    sudo docker rename $curr "$curr-old"
+  fi
+}
+
 output=""
 if [[ -f "$NAME_FILE_PATH" ]]; then
   # issue a cleanup, removes old named docker containers
@@ -20,6 +28,7 @@ if [[ -f "$NAME_FILE_PATH" ]]; then
   else
     while read line
     do
+      rename $line
       output="$output --name=$line"
     done < $NAME_FILE_PATH
   fi
